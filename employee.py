@@ -5,6 +5,7 @@ class Employee:
         self.id = id
         self.dept = dept
 
+
 class EmployeeManagement:
     def __init__(self):
         self.employees = []
@@ -13,15 +14,15 @@ class EmployeeManagement:
         for dict in self.employees:
             if employee.id in dict:
                 raise Exception()
-            if (not isinstance(employee.id, int)) or (not isinstance(employee.age, int)) or (not isinstance(employee.name, str)) or (not isinstance(employee.dept, str)):
+            if (not isinstance(employee.id, int)) or (not isinstance(employee.age, int)) or (
+                    not isinstance(employee.name, str)) or (not isinstance(employee.dept, str)):
                 raise Exception()
             if (employee.id < 0 or employee.age < 0):
                 raise Exception()
         self.employees.append({employee.id: [employee.name, employee.age, employee.dept]})
-      
-       
+
     def show_employee(self, id):
-    #    print(self.employees)
+        #    print(self.employees)
         for employee in self.employees:
             if id in employee:
                 return employee
@@ -33,7 +34,8 @@ class EmployeeManagement:
                 del self.employees[i]
                 return
         raise Exception()
-        
+
+
 emp = Employee('Hamza', 20, 600, 'Marketing')
 emp2 = Employee('Omar', 30, 601, 'HR')
 emp3 = Employee('Ali', 40, 602, 'Sales')
